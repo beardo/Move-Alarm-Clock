@@ -9,4 +9,11 @@
 
 @interface MAViewController : UIViewController
 
+// buttons
+@property (weak, nonatomic) IBOutlet UIButton *timeButton;
+@property (weak, nonatomic) IBOutlet UIButton *repeatButton;
+@property (weak, nonatomic) IBOutlet UIButton *soundButton;
+@property (weak, nonatomic) IBOutlet UIButton *locationButton;
+@property (weak, nonatomic) IBOutlet UISegmentedControl *activationButton;
+
 @end

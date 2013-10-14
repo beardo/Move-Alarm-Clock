@@ -23,6 +23,7 @@
 		250170C2180A10390027ED08 /* Move_alarmTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 250170C1180A10390027ED08 /* Move_alarmTests.m */; };
 		250170CC180A122A0027ED08 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 250170CB180A122A0027ED08 /* CoreLocation.framework */; };
 		250170CE180A25950027ED08 /* alarm_sound.wav in Resources */ = {isa = PBXBuildFile; fileRef = 250170CD180A25950027ED08 /* alarm_sound.wav */; };
+		251AAE15180B7EEE0019AC63 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 251AAE14180B7EEE0019AC63 /* MapKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,6 +58,7 @@
 		250170C1180A10390027ED08 /* Move_alarmTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Move_alarmTests.m; sourceTree = "<group>"; };
 		250170CB180A122A0027ED08 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		250170CD180A25950027ED08 /* alarm_sound.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = alarm_sound.wav; sourceTree = "<group>"; };
+		251AAE14180B7EEE0019AC63 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,6 +66,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				251AAE15180B7EEE0019AC63 /* MapKit.framework in Frameworks */,
 				250170CC180A122A0027ED08 /* CoreLocation.framework in Frameworks */,
 				25017099180A10370027ED08 /* CoreGraphics.framework in Frameworks */,
 				2501709B180A10370027ED08 /* UIKit.framework in Frameworks */,
@@ -106,6 +109,7 @@
 		25017095180A10370027ED08 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				251AAE14180B7EEE0019AC63 /* MapKit.framework */,
 				250170CB180A122A0027ED08 /* CoreLocation.framework */,
 				25017096180A10370027ED08 /* Foundation.framework */,
 				25017098180A10370027ED08 /* CoreGraphics.framework */,
@@ -478,6 +482,7 @@
 				250170C7180A10390027ED08 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		250170C8180A10390027ED08 /* Build configuration list for PBXNativeTarget "Move alarmTests" */ = {
 			isa = XCConfigurationList;
@@ -486,6 +491,7 @@
 				250170CA180A10390027ED08 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
