@@ -10,5 +10,8 @@
 @interface MAAppDelegate : UIResponder <UIApplicationDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
+@property (strong) NSManagedObjectContext *managedObjectContext;
+@property (strong) NSManagedObjectModel *managedObjectModel;
+@property (strong) NSURL *storeURL;
 
 @end

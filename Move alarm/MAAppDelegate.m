@@ -6,6 +6,7 @@
 //
 
 #import "MAAppDelegate.h"
+#import <CoreData/CoreData.h>
 
 @implementation MAAppDelegate
 
@@ -40,6 +41,25 @@
 - (void)applicationWillTerminate:(UIApplication *)application
 {
   // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+}
+
+- (void)setupManagedObjectContext
+{
+  self.managedObjectContext =
+  [[NSManagedObjectContext alloc] initWithConcurrencyType:NSMainQueueConcurrencyType];
+  self.managedObjectContext.persistentStoreCoordinator =
+  [[NSPersistentStoreCoordinator alloc] initWithManagedObjectModel:self.managedObjectModel];
+  NSError* error;
+  [self.managedObjectContext.persistentStoreCoordinator
+   addPersistentStoreWithType:NSSQLiteStoreType
+   configuration:nil
+   URL:self.storeURL
+   options:nil
+   error:&error];
+  if (error) {
+    NSLog(@"error: %@", error);
+  }
+  self.managedObjectContext.undoManager = [[NSUndoManager alloc] init];
 }
 
 @end
