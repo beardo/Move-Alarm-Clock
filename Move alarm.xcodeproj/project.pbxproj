@@ -24,6 +24,7 @@
 		250170CC180A122A0027ED08 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 250170CB180A122A0027ED08 /* CoreLocation.framework */; };
 		250170CE180A25950027ED08 /* alarm_sound.wav in Resources */ = {isa = PBXBuildFile; fileRef = 250170CD180A25950027ED08 /* alarm_sound.wav */; };
 		251AAE15180B7EEE0019AC63 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 251AAE14180B7EEE0019AC63 /* MapKit.framework */; };
+		25CBEEC01814A1A000C19636 /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 25CBEEBE1814A1A000C19636 /* Model.xcdatamodeld */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,6 +60,7 @@
 		250170CB180A122A0027ED08 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		250170CD180A25950027ED08 /* alarm_sound.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = alarm_sound.wav; sourceTree = "<group>"; };
 		251AAE14180B7EEE0019AC63 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		25CBEEBF1814A1A000C19636 /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -125,6 +127,7 @@
 				250170A5180A10380027ED08 /* MAAppDelegate.h */,
 				250170A6180A10380027ED08 /* MAAppDelegate.m */,
 				250170A8180A10390027ED08 /* Main.storyboard */,
+				25CBEEBE1814A1A000C19636 /* Model.xcdatamodeld */,
 				250170AB180A10390027ED08 /* MAViewController.h */,
 				250170AC180A10390027ED08 /* MAViewController.m */,
 				250170AE180A10390027ED08 /* Images.xcassets */,
@@ -272,6 +275,7 @@
 				250170A7180A10380027ED08 /* MAAppDelegate.m in Sources */,
 				250170AD180A10390027ED08 /* MAViewController.m in Sources */,
 				250170A3180A10370027ED08 /* main.m in Sources */,
+				25CBEEC01814A1A000C19636 /* Model.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -494,6 +498,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		25CBEEBE1814A1A000C19636 /* Model.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				25CBEEBF1814A1A000C19636 /* Model.xcdatamodel */,
+			);
+			currentVersion = 25CBEEBF1814A1A000C19636 /* Model.xcdatamodel */;
+			path = Model.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 2501708B180A10360027ED08 /* Project object */;
 }
