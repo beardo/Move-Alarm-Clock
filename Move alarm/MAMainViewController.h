@@ -7,7 +7,9 @@
 
 #import <UIKit/UIKit.h>
 
-@interface MAViewController : UIViewController
+@interface MAMainViewController : UIViewController
+
+@property NSManagedObjectContext *managedObjectContext;
 
 // buttons
 @property (weak, nonatomic) IBOutlet UIButton *timeButton;

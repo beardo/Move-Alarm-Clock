@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="3396" systemVersion="12F45" minimumToolsVersion="Xcode 4.3" macOSVersion="Automatic" iOSVersion="Automatic">
-    <entity name="Alarm" syncable="YES">
+    <entity name="Alarm" representedClassName="Alarm" syncable="YES">
         <attribute name="hour" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
         <attribute name="minute" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
         <attribute name="on" optional="YES" attributeType="Boolean" syncable="YES"/>
@@ -8,21 +8,21 @@
         <relationship name="location" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Location" inverseName="alarm" inverseEntity="Location" syncable="YES"/>
         <relationship name="repetition" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Repetition" inverseName="alarm" inverseEntity="Repetition" syncable="YES"/>
     </entity>
-    <entity name="Location" syncable="YES">
+    <entity name="Location" representedClassName="Location" syncable="YES">
         <attribute name="accuracy" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
         <attribute name="latitude" optional="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
         <attribute name="longitude" optional="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
         <relationship name="alarm" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Alarm" inverseName="location" inverseEntity="Alarm" syncable="YES"/>
     </entity>
-    <entity name="Repetition" syncable="YES">
+    <entity name="Repetition" representedClassName="Repetition" syncable="YES">
         <attribute name="day" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="shouldRepeat" optional="YES" attributeType="Boolean" syncable="YES"/>
         <relationship name="alarm" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Alarm" inverseName="repetition" inverseEntity="Alarm" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Alarm" positionX="160" positionY="192" width="128" height="133"/>
-        <element name="Location" positionX="214" positionY="369" width="128" height="105"/>
-        <element name="Repetition" positionX="385" positionY="186" width="128" height="75"/>
+        <element name="Alarm" positionX="0" positionY="0" width="0" height="0"/>
+        <element name="Location" positionX="0" positionY="0" width="0" height="0"/>
+        <element name="Repetition" positionX="0" positionY="0" width="0" height="0"/>
     </elements>
 </model>
