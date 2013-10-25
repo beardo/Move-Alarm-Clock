@@ -8,6 +8,10 @@
 
 #import <UIKit/UIKit.h>
 
-@interface MARepeatViewController : UITableViewController
+// forward declarations
+@class Alarm;
 
+@interface MARepeatViewController : UITableViewController
+@property NSManagedObjectContext *managedObjectContext;
+@property Alarm *alarm;
 @end

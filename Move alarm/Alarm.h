@@ -2,7 +2,7 @@
 //  Alarm.h
 //  Move alarm
 //
-//  Created by Daniel Sullivan on 10/21/13.
+//  Created by Daniel Sullivan on 10/25/13.
 //  Copyright (c) 2013 Novelty Software. All rights reserved.
 //
 
@@ -18,6 +18,14 @@
 @property (nonatomic, retain) NSNumber * on;
 @property (nonatomic, retain) NSString * sound;
 @property (nonatomic, retain) Location *location;
-@property (nonatomic, retain) Repetition *repetition;
+@property (nonatomic, retain) NSSet *repetitions;
+@end
+
+@interface Alarm (CoreDataGeneratedAccessors)
+
+- (void)addRepetitionsObject:(Repetition *)value;
+- (void)removeRepetitionsObject:(Repetition *)value;
+- (void)addRepetitions:(NSSet *)values;
+- (void)removeRepetitions:(NSSet *)values;
 
 @end

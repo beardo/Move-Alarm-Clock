@@ -11,6 +11,7 @@
 
 @implementation Alarm (Extension)
 
+#pragma mark - Class Methods
 + (NSString *)entityName
 {
   return @"Alarm";

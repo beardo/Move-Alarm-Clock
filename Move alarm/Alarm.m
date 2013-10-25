@@ -2,7 +2,7 @@
 //  Alarm.m
 //  Move alarm
 //
-//  Created by Daniel Sullivan on 10/21/13.
+//  Created by Daniel Sullivan on 10/25/13.
 //  Copyright (c) 2013 Novelty Software. All rights reserved.
 //
 
@@ -18,6 +18,6 @@
 @dynamic on;
 @dynamic sound;
 @dynamic location;
-@dynamic repetition;
+@dynamic repetitions;
 
 @end

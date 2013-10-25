@@ -7,9 +7,12 @@
 
 #import <UIKit/UIKit.h>
 
+@class Alarm;
+
 @interface MAMainViewController : UIViewController
 
 @property NSManagedObjectContext *managedObjectContext;
+@property Alarm *alarm;
 
 // buttons
 @property (weak, nonatomic) IBOutlet UIButton *timeButton;

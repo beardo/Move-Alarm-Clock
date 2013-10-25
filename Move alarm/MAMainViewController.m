@@ -8,9 +8,9 @@
 #import "MAMainViewController.h"
 #import "Alarm.h"
 #import "Alarm+Extension.h"
+#import "MARepeatViewController.h"
 
 @interface MAMainViewController ()
-@property Alarm *alarm;
 @end
 
 @implementation MAMainViewController
@@ -47,7 +47,9 @@
   }
   else if ([[segue identifier] isEqualToString:@"ShowRepeaterSegue"])
   {
-    
+    MARepeatViewController *destinationViewController = segue.destinationViewController;
+    destinationViewController.managedObjectContext = self.managedObjectContext;
+    destinationViewController.alarm = self.alarm;
   }
 }
 

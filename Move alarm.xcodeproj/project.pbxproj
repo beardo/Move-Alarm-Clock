@@ -24,14 +24,15 @@
 		250170CC180A122A0027ED08 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 250170CB180A122A0027ED08 /* CoreLocation.framework */; };
 		250170CE180A25950027ED08 /* alarm_sound.wav in Resources */ = {isa = PBXBuildFile; fileRef = 250170CD180A25950027ED08 /* alarm_sound.wav */; };
 		251AAE15180B7EEE0019AC63 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 251AAE14180B7EEE0019AC63 /* MapKit.framework */; };
-		25B4E5251816149F0011F24E /* Repetition.m in Sources */ = {isa = PBXBuildFile; fileRef = 25B4E5241816149F0011F24E /* Repetition.m */; };
 		25B4E528181614A10011F24E /* Location.m in Sources */ = {isa = PBXBuildFile; fileRef = 25B4E527181614A10011F24E /* Location.m */; };
-		25B4E52B181614A10011F24E /* Alarm.m in Sources */ = {isa = PBXBuildFile; fileRef = 25B4E52A181614A10011F24E /* Alarm.m */; };
 		25B4E533181623850011F24E /* Alarm+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 25B4E532181623850011F24E /* Alarm+Extension.m */; };
 		25CBEEC01814A1A000C19636 /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 25CBEEBE1814A1A000C19636 /* Model.xcdatamodeld */; };
 		25CBEEC31814AB4500C19636 /* MARepeatViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 25CBEEC21814AB4500C19636 /* MARepeatViewController.m */; };
 		25CBEEC61814AB7500C19636 /* MATimeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 25CBEEC51814AB7500C19636 /* MATimeViewController.m */; };
 		25CBEEC91814ABB600C19636 /* MALocationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 25CBEEC81814ABB600C19636 /* MALocationViewController.m */; };
+		25E8EF83181B2A95007713F4 /* Repetition+Extensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 25E8EF82181B2A95007713F4 /* Repetition+Extensions.m */; };
+		25E8EF86181B2DCA007713F4 /* Alarm.m in Sources */ = {isa = PBXBuildFile; fileRef = 25E8EF85181B2DCA007713F4 /* Alarm.m */; };
+		25E8EF8C181B2FCE007713F4 /* Repetition.m in Sources */ = {isa = PBXBuildFile; fileRef = 25E8EF8B181B2FCE007713F4 /* Repetition.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -67,12 +68,8 @@
 		250170CB180A122A0027ED08 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		250170CD180A25950027ED08 /* alarm_sound.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = alarm_sound.wav; sourceTree = "<group>"; };
 		251AAE14180B7EEE0019AC63 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
-		25B4E5231816149F0011F24E /* Repetition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Repetition.h; sourceTree = "<group>"; };
-		25B4E5241816149F0011F24E /* Repetition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Repetition.m; sourceTree = "<group>"; };
 		25B4E526181614A10011F24E /* Location.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Location.h; sourceTree = "<group>"; };
 		25B4E527181614A10011F24E /* Location.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Location.m; sourceTree = "<group>"; };
-		25B4E529181614A10011F24E /* Alarm.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Alarm.h; sourceTree = "<group>"; };
-		25B4E52A181614A10011F24E /* Alarm.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Alarm.m; sourceTree = "<group>"; };
 		25B4E531181623850011F24E /* Alarm+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Alarm+Extension.h"; sourceTree = "<group>"; };
 		25B4E532181623850011F24E /* Alarm+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Alarm+Extension.m"; sourceTree = "<group>"; };
 		25CBEEBF1814A1A000C19636 /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
@@ -82,6 +79,12 @@
 		25CBEEC51814AB7500C19636 /* MATimeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MATimeViewController.m; sourceTree = "<group>"; };
 		25CBEEC71814ABB600C19636 /* MALocationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MALocationViewController.h; sourceTree = "<group>"; };
 		25CBEEC81814ABB600C19636 /* MALocationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MALocationViewController.m; sourceTree = "<group>"; };
+		25E8EF81181B2A95007713F4 /* Repetition+Extensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Repetition+Extensions.h"; sourceTree = "<group>"; };
+		25E8EF82181B2A95007713F4 /* Repetition+Extensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Repetition+Extensions.m"; sourceTree = "<group>"; };
+		25E8EF84181B2DCA007713F4 /* Alarm.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Alarm.h; sourceTree = "<group>"; };
+		25E8EF85181B2DCA007713F4 /* Alarm.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Alarm.m; sourceTree = "<group>"; };
+		25E8EF8A181B2FCE007713F4 /* Repetition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Repetition.h; sourceTree = "<group>"; };
+		25E8EF8B181B2FCE007713F4 /* Repetition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Repetition.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -189,15 +192,17 @@
 		25B4E52C181614B80011F24E /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				25B4E531181623850011F24E /* Alarm+Extension.h */,
-				25B4E532181623850011F24E /* Alarm+Extension.m */,
 				25CBEEBE1814A1A000C19636 /* Model.xcdatamodeld */,
-				25B4E529181614A10011F24E /* Alarm.h */,
-				25B4E52A181614A10011F24E /* Alarm.m */,
+				25E8EF84181B2DCA007713F4 /* Alarm.h */,
+				25E8EF85181B2DCA007713F4 /* Alarm.m */,
 				25B4E526181614A10011F24E /* Location.h */,
 				25B4E527181614A10011F24E /* Location.m */,
-				25B4E5231816149F0011F24E /* Repetition.h */,
-				25B4E5241816149F0011F24E /* Repetition.m */,
+				25E8EF8A181B2FCE007713F4 /* Repetition.h */,
+				25E8EF8B181B2FCE007713F4 /* Repetition.m */,
+				25B4E531181623850011F24E /* Alarm+Extension.h */,
+				25B4E532181623850011F24E /* Alarm+Extension.m */,
+				25E8EF81181B2A95007713F4 /* Repetition+Extensions.h */,
+				25E8EF82181B2A95007713F4 /* Repetition+Extensions.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -326,11 +331,12 @@
 				25CBEEC91814ABB600C19636 /* MALocationViewController.m in Sources */,
 				25B4E533181623850011F24E /* Alarm+Extension.m in Sources */,
 				25CBEEC31814AB4500C19636 /* MARepeatViewController.m in Sources */,
-				25B4E5251816149F0011F24E /* Repetition.m in Sources */,
-				25B4E52B181614A10011F24E /* Alarm.m in Sources */,
+				25E8EF86181B2DCA007713F4 /* Alarm.m in Sources */,
 				25CBEEC61814AB7500C19636 /* MATimeViewController.m in Sources */,
 				25B4E528181614A10011F24E /* Location.m in Sources */,
+				25E8EF8C181B2FCE007713F4 /* Repetition.m in Sources */,
 				250170A7180A10380027ED08 /* MAAppDelegate.m in Sources */,
+				25E8EF83181B2A95007713F4 /* Repetition+Extensions.m in Sources */,
 				250170AD180A10390027ED08 /* MAMainViewController.m in Sources */,
 				250170A3180A10370027ED08 /* main.m in Sources */,
 				25CBEEC01814A1A000C19636 /* Model.xcdatamodeld in Sources */,

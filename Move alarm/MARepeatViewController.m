@@ -7,69 +7,84 @@
 //
 
 #import "MARepeatViewController.h"
+#import "Alarm.h"
+#import "Repetition.h"
+#import "Repetition+Extensions.h"
 
 @interface MARepeatViewController ()
-
+@property NSArray *repititions;
 @end
 
 @implementation MARepeatViewController
 
 - (id)initWithStyle:(UITableViewStyle)style
 {
-    self = [super initWithStyle:style];
-    if (self) {
-        // Custom initialization
-    }
-    return self;
+  self = [super initWithStyle:style];
+  if (self) {
+    // Custom initialization
+  }
+  return self;
 }
 
 - (void)viewDidLoad
 {
-    [super viewDidLoad];
-
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
- 
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+  [super viewDidLoad];
+  NSSortDescriptor *repetitionDescriptor = [NSSortDescriptor sortDescriptorWithKey:@"sortValue"
+                                                                         ascending:YES];
+  NSArray *sortDescriptors = @[repetitionDescriptor];
+  self.repititions = [self.alarm.repetitions sortedArrayUsingDescriptors:sortDescriptors];
+  if (![self.repititions count])
+  {
+    self.repititions = [Repetition createRepitionsForDaysWithManagedObjectContext:self.managedObjectContext];
+  }
 }
 
 - (void)didReceiveMemoryWarning
 {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+  [super didReceiveMemoryWarning];
 }
 
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-    // Return the number of sections.
+  // Return the number of sections.
   return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    // Return the number of rows in the section.
-    return 7;
+  // Return the number of rows in the section.
+  return [self.repititions count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    static NSString *CellIdentifier = @"AlarmRepeatCell";
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
-    
-  // Configure the cell...
+  static NSString *cellIdentitfier = @"AlarmRepeatCell";
+  UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentitfier
+                                                          forIndexPath:indexPath];
 
+  Repetition *repition = self.repititions[indexPath.row];
+  cell.textLabel.text = repition.displayName;
+
+  if ([repition.shouldRepeat boolValue])
+  {
+    cell.accessoryType = UITableViewCellAccessoryCheckmark;
+  }
+  else
+  {
+    cell.accessoryType = UITableViewCellAccessoryNone;
+  }
   return cell;
 }
 
-- (void)tableView:(UITableView *)tableView didDeselectRowAtIndexPath:(NSIndexPath *)indexPath
+
+//- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+- (void)tableView:(UITableView *)tableView didHighlightRowAtIndexPath:(NSIndexPath *)indexPath
 {
-  static NSString *CellIdentifier = @"Cell";
-  UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
-  
-  cell.accessoryType = UITableViewCellAccessoryCheckmark;
+  Repetition *repition = self.repititions[indexPath.row];
+  repition.shouldRepeat = [NSNumber numberWithBool:![repition.shouldRepeat boolValue]];
+  [tableView reloadData];
 }
 
 @end

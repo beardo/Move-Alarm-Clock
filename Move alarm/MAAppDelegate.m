@@ -14,8 +14,8 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
   // Override point for customization after application launch.
-  MAMainViewController *rootViewController = (MAMainViewController *)self.window.rootViewController;
-  
+  UINavigationController *navigationController = (UINavigationController *)self.window.rootViewController;
+  MAMainViewController *rootViewController = (MAMainViewController *)navigationController.viewControllers.firstObject;
   if (self.managedObjectContext == nil) {
     [self setupManagedObjectContext];
   }
@@ -53,17 +53,21 @@
 
 - (void)setupManagedObjectContext
 {
+  
+  self.managedObjectModel = [NSManagedObjectModel mergedModelFromBundles:@[[NSBundle mainBundle]]];
   self.managedObjectContext =
   [[NSManagedObjectContext alloc] initWithConcurrencyType:NSMainQueueConcurrencyType];
   self.managedObjectContext.persistentStoreCoordinator =
   [[NSPersistentStoreCoordinator alloc] initWithManagedObjectModel:self.managedObjectModel];
   NSError* error;
+  /*
   [self.managedObjectContext.persistentStoreCoordinator
    addPersistentStoreWithType:NSSQLiteStoreType
    configuration:nil
    URL:self.storeURL
    options:nil
    error:&error];
+  */
   if (error) {
     NSLog(@"error: %@", error);
   }
