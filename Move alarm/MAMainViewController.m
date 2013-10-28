@@ -9,6 +9,7 @@
 #import "Alarm.h"
 #import "Alarm+Extension.h"
 #import "MARepeatViewController.h"
+#import "MAAlarmViewControllerProtocol.h"
 
 @interface MAMainViewController ()
 @end
@@ -38,16 +39,11 @@
 
 - (void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
-  if ([[segue identifier] isEqualToString:@"ShowTimePickerSegue"]) {
-    
-  }
-  else if ([[segue identifier] isEqualToString:@"ShowLocationPickerSegue"])
+  if (([[segue identifier] isEqualToString:@"ShowTimePickerSegue"]) ||
+     ([[segue identifier] isEqualToString:@"ShowLocationPickerSegue"]) ||
+     ([[segue identifier] isEqualToString:@"ShowRepeaterSegue"]))
   {
-    
-  }
-  else if ([[segue identifier] isEqualToString:@"ShowRepeaterSegue"])
-  {
-    MARepeatViewController *destinationViewController = segue.destinationViewController;
+    UIViewController<MAAlarmViewControllerProtocol> *destinationViewController = segue.destinationViewController;
     destinationViewController.managedObjectContext = self.managedObjectContext;
     destinationViewController.alarm = self.alarm;
   }

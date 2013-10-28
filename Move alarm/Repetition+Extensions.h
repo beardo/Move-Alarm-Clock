@@ -3,7 +3,6 @@
 //  Move alarm
 //
 //  Created by Daniel Sullivan on 10/25/13.
-//  Copyright (c) 2013 Novelty Software. All rights reserved.
 //
 
 #import "Repetition.h"

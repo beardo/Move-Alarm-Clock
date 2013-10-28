@@ -33,6 +33,7 @@
 		25E8EF83181B2A95007713F4 /* Repetition+Extensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 25E8EF82181B2A95007713F4 /* Repetition+Extensions.m */; };
 		25E8EF86181B2DCA007713F4 /* Alarm.m in Sources */ = {isa = PBXBuildFile; fileRef = 25E8EF85181B2DCA007713F4 /* Alarm.m */; };
 		25E8EF8C181B2FCE007713F4 /* Repetition.m in Sources */ = {isa = PBXBuildFile; fileRef = 25E8EF8B181B2FCE007713F4 /* Repetition.m */; };
+		25E8EF91181DF4CB007713F4 /* NSManagedObject+Extensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 25E8EF90181DF4CB007713F4 /* NSManagedObject+Extensions.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -85,6 +86,10 @@
 		25E8EF85181B2DCA007713F4 /* Alarm.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Alarm.m; sourceTree = "<group>"; };
 		25E8EF8A181B2FCE007713F4 /* Repetition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Repetition.h; sourceTree = "<group>"; };
 		25E8EF8B181B2FCE007713F4 /* Repetition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Repetition.m; sourceTree = "<group>"; };
+		25E8EF8D181C7FF5007713F4 /* MADebugMacros.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MADebugMacros.h; sourceTree = "<group>"; };
+		25E8EF8E181C80EE007713F4 /* MAAlarmViewControllerProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MAAlarmViewControllerProtocol.h; sourceTree = "<group>"; };
+		25E8EF8F181DF4CB007713F4 /* NSManagedObject+Extensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSManagedObject+Extensions.h"; sourceTree = "<group>"; };
+		25E8EF90181DF4CB007713F4 /* NSManagedObject+Extensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSManagedObject+Extensions.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -148,6 +153,7 @@
 		2501709C180A10370027ED08 /* Move alarm */ = {
 			isa = PBXGroup;
 			children = (
+				25E8EF8D181C7FF5007713F4 /* MADebugMacros.h */,
 				250170A5180A10380027ED08 /* MAAppDelegate.h */,
 				250170A6180A10380027ED08 /* MAAppDelegate.m */,
 				250170A8180A10390027ED08 /* Main.storyboard */,
@@ -192,6 +198,8 @@
 		25B4E52C181614B80011F24E /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				25E8EF8F181DF4CB007713F4 /* NSManagedObject+Extensions.h */,
+				25E8EF90181DF4CB007713F4 /* NSManagedObject+Extensions.m */,
 				25CBEEBE1814A1A000C19636 /* Model.xcdatamodeld */,
 				25E8EF84181B2DCA007713F4 /* Alarm.h */,
 				25E8EF85181B2DCA007713F4 /* Alarm.m */,
@@ -218,6 +226,7 @@
 				25CBEEC21814AB4500C19636 /* MARepeatViewController.m */,
 				250170AB180A10390027ED08 /* MAMainViewController.h */,
 				250170AC180A10390027ED08 /* MAMainViewController.m */,
+				25E8EF8E181C80EE007713F4 /* MAAlarmViewControllerProtocol.h */,
 			);
 			name = "View Controllers";
 			sourceTree = "<group>";
@@ -335,6 +344,7 @@
 				25CBEEC61814AB7500C19636 /* MATimeViewController.m in Sources */,
 				25B4E528181614A10011F24E /* Location.m in Sources */,
 				25E8EF8C181B2FCE007713F4 /* Repetition.m in Sources */,
+				25E8EF91181DF4CB007713F4 /* NSManagedObject+Extensions.m in Sources */,
 				250170A7180A10380027ED08 /* MAAppDelegate.m in Sources */,
 				25E8EF83181B2A95007713F4 /* Repetition+Extensions.m in Sources */,
 				250170AD180A10390027ED08 /* MAMainViewController.m in Sources */,

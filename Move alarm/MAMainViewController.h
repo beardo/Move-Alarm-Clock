@@ -6,10 +6,12 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "MAAlarmViewControllerProtocol.h"
 
 @class Alarm;
 
 @interface MAMainViewController : UIViewController
+<MAAlarmViewControllerProtocol>
 
 @property NSManagedObjectContext *managedObjectContext;
 @property Alarm *alarm;

@@ -3,11 +3,15 @@
 //  Move alarm
 //
 //  Created by Daniel Sullivan on 10/20/13.
-//  Copyright (c) 2013 Novelty Software. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
+#import "MAAlarmViewControllerProtocol.h"
 
 @interface MALocationViewController : UIViewController
+<MAAlarmViewControllerProtocol>
+
+@property Alarm *alarm;
+@property NSManagedObjectContext *managedObjectContext;
 
 @end
