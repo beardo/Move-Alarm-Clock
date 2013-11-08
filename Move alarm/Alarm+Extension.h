@@ -12,4 +12,7 @@
 + (instancetype)insertNewObjectInManagedObjectContext:(NSManagedObjectContext *)moc;
 + (NSInteger) numberOfAlarmsWithManagedObjectContext:(NSManagedObjectContext *)moc;
 + (Alarm *) getFirstAlarmWithManagedObjectContext:(NSManagedObjectContext *)moc;
+- (NSString *) displayTime;
+- (NSString *) displayRepitions;
+- (NSArray *)repitionsSorted;
 @end

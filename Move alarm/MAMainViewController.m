@@ -11,6 +11,8 @@
 #import "MARepeatViewController.h"
 #import "MAAlarmViewControllerProtocol.h"
 
+#import "MADebugMacros.h"
+
 @interface MAMainViewController ()
 @end
 
@@ -28,6 +30,23 @@
   {
     self.alarm = [Alarm insertNewObjectInManagedObjectContext:self.managedObjectContext];
   }
+}
+
+- (void)viewWillAppear:(BOOL)animated
+{
+  [super viewDidAppear:animated];
+  DLog(@"");
+  if(self.managedObjectContext.hasChanges)
+  {
+    DLog(@"has changes");
+    NSError *error;
+    if(![self.managedObjectContext save:&error])
+    {
+      DLog(@"save failed: %@", error);
+    }
+  }
+  [self.timeButton setTitle:[self.alarm displayTime] forState:UIControlStateNormal];
+  [self.repeatButton setTitle:[self.alarm displayRepitions] forState:UIControlStateNormal];
 }
 
 - (void)didReceiveMemoryWarning
@@ -49,4 +68,8 @@
   }
 }
 
+#pragma mark - action
+- (IBAction)changedActivation:(id)sender {
+  
+}
 @end

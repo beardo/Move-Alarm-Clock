@@ -9,6 +9,8 @@
 #import "MAMainViewController.h"
 #import <CoreData/CoreData.h>
 
+#import "MADebugMacros.h"
+
 @implementation MAAppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
@@ -51,23 +53,27 @@
   // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
 }
 
+#pragma mark - Application's Documents directory
+
+// Returns the URL to the application's Documents directory.
+- (NSURL *)applicationDocumentsDirectory
+{
+  return [[[NSFileManager defaultManager] URLsForDirectory:NSDocumentDirectory inDomains:NSUserDomainMask] lastObject];
+}
+
 - (void)setupManagedObjectContext
 {
-  
   self.managedObjectModel = [NSManagedObjectModel mergedModelFromBundles:@[[NSBundle mainBundle]]];
   self.managedObjectContext =
   [[NSManagedObjectContext alloc] initWithConcurrencyType:NSMainQueueConcurrencyType];
-  self.managedObjectContext.persistentStoreCoordinator =
-  [[NSPersistentStoreCoordinator alloc] initWithManagedObjectModel:self.managedObjectModel];
-  NSError* error;
-  /*
-  [self.managedObjectContext.persistentStoreCoordinator
-   addPersistentStoreWithType:NSSQLiteStoreType
-   configuration:nil
-   URL:self.storeURL
-   options:nil
-   error:&error];
-  */
+  self.persistentStoreCoordinator = [[NSPersistentStoreCoordinator alloc] initWithManagedObjectModel:self.managedObjectModel];
+  NSError *error = nil;
+  self.storeURL = [[self applicationDocumentsDirectory] URLByAppendingPathComponent:@"Move_Alarm.sqlite"];
+  [self.persistentStoreCoordinator addPersistentStoreWithType:NSSQLiteStoreType configuration:nil URL:self.storeURL options:nil error:&error];
+  self.managedObjectContext.persistentStoreCoordinator = self.persistentStoreCoordinator;
+  if (error) {
+    DLog(@"error: %@", error);
+  }
   if (error) {
     NSLog(@"error: %@", error);
   }

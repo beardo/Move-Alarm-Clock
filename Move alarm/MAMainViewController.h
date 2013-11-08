@@ -23,4 +23,7 @@
 @property (weak, nonatomic) IBOutlet UIButton *locationButton;
 @property (weak, nonatomic) IBOutlet UISegmentedControl *activationButton;
 
+// actions
+- (IBAction)changedActivation:(id)sender;
+
 @end

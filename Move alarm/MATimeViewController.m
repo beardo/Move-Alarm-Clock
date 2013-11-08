@@ -32,6 +32,7 @@
   return self;
 }
 
+#pragma mark = View lifecycle methods
 - (void)viewDidLoad
 {
   [super viewDidLoad];
@@ -51,10 +52,16 @@
   [self resetTimePickerToMiddle:[self.hour integerValue] minutes:[self.minute integerValue]];
 }
 
+- (void)viewWillDisappear:(BOOL)animated
+{
+  self.hour = [NSNumber numberWithInt:[self.timePickerView selectedRowInComponent:0] % self.numberOfHours];
+  self.minute = [NSNumber numberWithInt:[self.timePickerView selectedRowInComponent:1] % self.numberOfMinutes];
+  self.alarm.hour = self.hour;
+  self.alarm.minute = self.minute;
+}
+
 - (void) resetTimePickerToMiddle:(NSUInteger)hour minutes:(NSUInteger)minutes
 {
-  DLog(@"hour: %lu", (unsigned long)hour);
-  DLog(@"minutes: %lu", (unsigned long)minutes);
   [self.timePickerView selectRow:((UINT16_MAX)/(2 * self.numberOfHours) * self.numberOfHours) + hour inComponent:0 animated:NO];
   [self.timePickerView selectRow:((UINT16_MAX)/(2 * self.numberOfMinutes) * self.numberOfMinutes) + minutes inComponent:1 animated:NO];
 }

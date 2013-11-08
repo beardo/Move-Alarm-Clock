@@ -38,6 +38,9 @@
                                     <segment title="On"/>
                                     <segment title="Off"/>
                                 </segments>
+                                <connections>
+                                    <action selector="changedActivation:" destination="vXZ-lx-hvc" eventType="valueChanged" id="dP1-y1-oRv"/>
+                                </connections>
                             </segmentedControl>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Repeat:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="elZ-Q8-NwT">
                                 <rect key="frame" x="20" y="178" width="141" height="44"/>
@@ -59,8 +62,8 @@
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CRh-22-QUI">
                                 <rect key="frame" x="20" y="64" width="280" height="98"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="66"/>
-                                <state key="normal" title="05:25 AM">
+                                <fontDescription key="fontDescription" type="system" pointSize="97"/>
+                                <state key="normal" title="07:30">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>

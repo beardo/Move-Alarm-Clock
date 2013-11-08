@@ -19,6 +19,4 @@
 - (NSInteger)numberOfComponentsInPickerView:(UIPickerView *)pickerView;
 - (NSInteger)pickerView:(UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component;
 - (NSString *)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component;
-
-
 @end

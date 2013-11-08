@@ -60,4 +60,5 @@
 {
   return [@"Every " stringByAppendingString:self.day];
 }
+
 @end

@@ -7,11 +7,12 @@
 
 #import "MARepeatViewController.h"
 #import "Alarm.h"
+#import "Alarm+Extension.h"
 #import "Repetition.h"
 #import "Repetition+Extensions.h"
 
 @interface MARepeatViewController ()
-@property NSArray *repititions;
+@property NSArray *repetitions;
 @end
 
 @implementation MARepeatViewController
@@ -28,13 +29,11 @@
 - (void)viewDidLoad
 {
   [super viewDidLoad];
-  NSSortDescriptor *repetitionDescriptor = [NSSortDescriptor sortDescriptorWithKey:@"sortValue"
-                                                                         ascending:YES];
-  NSArray *sortDescriptors = @[repetitionDescriptor];
-  self.repititions = [self.alarm.repetitions sortedArrayUsingDescriptors:sortDescriptors];
-  if (![self.repititions count])
+  self.repetitions = self.alarm.repitionsSorted;
+  if (![self.repetitions count])
   {
-    self.repititions = [Repetition createRepitionsForDaysWithManagedObjectContext:self.managedObjectContext];
+    self.repetitions = [Repetition createRepitionsForDaysWithManagedObjectContext:self.managedObjectContext];
+    self.alarm.repetitions = [NSSet setWithArray:self.repetitions];
   }
 }
 
@@ -54,7 +53,7 @@
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
   // Return the number of rows in the section.
-  return [self.repititions count];
+  return [self.repetitions count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -63,7 +62,7 @@
   UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentitfier
                                                           forIndexPath:indexPath];
 
-  Repetition *repition = self.repititions[indexPath.row];
+  Repetition *repition = self.repetitions[indexPath.row];
   cell.textLabel.text = repition.displayName;
 
   if ([repition.shouldRepeat boolValue])
@@ -81,7 +80,7 @@
 //- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 - (void)tableView:(UITableView *)tableView didHighlightRowAtIndexPath:(NSIndexPath *)indexPath
 {
-  Repetition *repition = self.repititions[indexPath.row];
+  Repetition *repition = self.repetitions[indexPath.row];
   repition.shouldRepeat = [NSNumber numberWithBool:![repition.shouldRepeat boolValue]];
   [tableView reloadData];
 }
