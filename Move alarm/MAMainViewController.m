@@ -7,7 +7,7 @@
 
 #import "MAMainViewController.h"
 #import "Alarm.h"
-#import "Alarm+Extension.h"
+#import "Alarm+Extensions.h"
 #import "MARepeatViewController.h"
 #import "MAAlarmViewControllerProtocol.h"
 

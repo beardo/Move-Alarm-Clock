@@ -7,7 +7,7 @@
 
 #import "MATimeViewController.h"
 #import "Alarm.h"
-#import "Alarm+Extension.h"
+#import "Alarm+Extensions.h"
 #import "NSManagedObject+Extensions.h"
 #import "MADebugMacros.h"
 

@@ -7,7 +7,7 @@
 
 #import "MARepeatViewController.h"
 #import "Alarm.h"
-#import "Alarm+Extension.h"
+#import "Alarm+Extensions.h"
 #import "Repetition.h"
 #import "Repetition+Extensions.h"
 
