@@ -24,8 +24,11 @@
 		250170CC180A122A0027ED08 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 250170CB180A122A0027ED08 /* CoreLocation.framework */; };
 		250170CE180A25950027ED08 /* alarm_sound.wav in Resources */ = {isa = PBXBuildFile; fileRef = 250170CD180A25950027ED08 /* alarm_sound.wav */; };
 		251AAE15180B7EEE0019AC63 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 251AAE14180B7EEE0019AC63 /* MapKit.framework */; };
+		2597D99818C17AA500C6898F /* Location+Extensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 2597D99718C17AA500C6898F /* Location+Extensions.m */; };
+		2597D99E18C2C21500C6898F /* AddressBook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2597D99C18C2C21500C6898F /* AddressBook.framework */; };
+		2597D99F18C2C21500C6898F /* AddressBookUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2597D99D18C2C21500C6898F /* AddressBookUI.framework */; };
 		25B4E528181614A10011F24E /* Location.m in Sources */ = {isa = PBXBuildFile; fileRef = 25B4E527181614A10011F24E /* Location.m */; };
-		25B4E533181623850011F24E /* Alarm+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 25B4E532181623850011F24E /* Alarm+Extension.m */; };
+		25B4E533181623850011F24E /* Alarm+Extensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 25B4E532181623850011F24E /* Alarm+Extensions.m */; };
 		25CBEEC01814A1A000C19636 /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 25CBEEBE1814A1A000C19636 /* Model.xcdatamodeld */; };
 		25CBEEC31814AB4500C19636 /* MARepeatViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 25CBEEC21814AB4500C19636 /* MARepeatViewController.m */; };
 		25CBEEC61814AB7500C19636 /* MATimeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 25CBEEC51814AB7500C19636 /* MATimeViewController.m */; };
@@ -69,10 +72,14 @@
 		250170CB180A122A0027ED08 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		250170CD180A25950027ED08 /* alarm_sound.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = alarm_sound.wav; sourceTree = "<group>"; };
 		251AAE14180B7EEE0019AC63 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		2597D99618C17AA500C6898F /* Location+Extensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Location+Extensions.h"; sourceTree = "<group>"; };
+		2597D99718C17AA500C6898F /* Location+Extensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Location+Extensions.m"; sourceTree = "<group>"; };
+		2597D99C18C2C21500C6898F /* AddressBook.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBook.framework; path = System/Library/Frameworks/AddressBook.framework; sourceTree = SDKROOT; };
+		2597D99D18C2C21500C6898F /* AddressBookUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBookUI.framework; path = System/Library/Frameworks/AddressBookUI.framework; sourceTree = SDKROOT; };
 		25B4E526181614A10011F24E /* Location.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Location.h; sourceTree = "<group>"; };
 		25B4E527181614A10011F24E /* Location.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Location.m; sourceTree = "<group>"; };
-		25B4E531181623850011F24E /* Alarm+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Alarm+Extension.h"; sourceTree = "<group>"; };
-		25B4E532181623850011F24E /* Alarm+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Alarm+Extension.m"; sourceTree = "<group>"; };
+		25B4E531181623850011F24E /* Alarm+Extensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Alarm+Extensions.h"; sourceTree = "<group>"; };
+		25B4E532181623850011F24E /* Alarm+Extensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Alarm+Extensions.m"; sourceTree = "<group>"; };
 		25CBEEBF1814A1A000C19636 /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
 		25CBEEC11814AB4500C19636 /* MARepeatViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MARepeatViewController.h; sourceTree = "<group>"; };
 		25CBEEC21814AB4500C19636 /* MARepeatViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MARepeatViewController.m; sourceTree = "<group>"; };
@@ -97,6 +104,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2597D99E18C2C21500C6898F /* AddressBook.framework in Frameworks */,
+				2597D99F18C2C21500C6898F /* AddressBookUI.framework in Frameworks */,
 				251AAE15180B7EEE0019AC63 /* MapKit.framework in Frameworks */,
 				250170CC180A122A0027ED08 /* CoreLocation.framework in Frameworks */,
 				25017099180A10370027ED08 /* CoreGraphics.framework in Frameworks */,
@@ -140,6 +149,8 @@
 		25017095180A10370027ED08 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				2597D99C18C2C21500C6898F /* AddressBook.framework */,
+				2597D99D18C2C21500C6898F /* AddressBookUI.framework */,
 				251AAE14180B7EEE0019AC63 /* MapKit.framework */,
 				250170CB180A122A0027ED08 /* CoreLocation.framework */,
 				25017096180A10370027ED08 /* Foundation.framework */,
@@ -207,10 +218,12 @@
 				25B4E527181614A10011F24E /* Location.m */,
 				25E8EF8A181B2FCE007713F4 /* Repetition.h */,
 				25E8EF8B181B2FCE007713F4 /* Repetition.m */,
-				25B4E531181623850011F24E /* Alarm+Extension.h */,
-				25B4E532181623850011F24E /* Alarm+Extension.m */,
+				25B4E531181623850011F24E /* Alarm+Extensions.h */,
+				25B4E532181623850011F24E /* Alarm+Extensions.m */,
 				25E8EF81181B2A95007713F4 /* Repetition+Extensions.h */,
 				25E8EF82181B2A95007713F4 /* Repetition+Extensions.m */,
+				2597D99618C17AA500C6898F /* Location+Extensions.h */,
+				2597D99718C17AA500C6898F /* Location+Extensions.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -338,7 +351,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				25CBEEC91814ABB600C19636 /* MALocationViewController.m in Sources */,
-				25B4E533181623850011F24E /* Alarm+Extension.m in Sources */,
+				25B4E533181623850011F24E /* Alarm+Extensions.m in Sources */,
+				2597D99818C17AA500C6898F /* Location+Extensions.m in Sources */,
 				25CBEEC31814AB4500C19636 /* MARepeatViewController.m in Sources */,
 				25E8EF86181B2DCA007713F4 /* Alarm.m in Sources */,
 				25CBEEC61814AB7500C19636 /* MATimeViewController.m in Sources */,

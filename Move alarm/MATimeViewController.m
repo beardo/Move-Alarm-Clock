@@ -6,9 +6,9 @@
 //
 
 #import "MATimeViewController.h"
-#import "Alarm.h"
 #import "Alarm+Extensions.h"
 #import "NSManagedObject+Extensions.h"
+#import "Location+Extensions.h"
 #import "MADebugMacros.h"
 
 @interface MATimeViewController ()
@@ -42,13 +42,6 @@
   self.hour = self.alarm.hour;
   self.minute = self.alarm.minute;
   
-  // If the user hasn't saved any alarms use 7:30 AM as the default
-  if ([self.alarm isNew])
-  {
-    DLog(@"[self.alarm isNew]");
-    self.hour = [NSNumber numberWithInteger:7];
-    self.minute = [NSNumber numberWithInteger:30];
-  }
   [self resetTimePickerToMiddle:[self.hour integerValue] minutes:[self.minute integerValue]];
 }
 
@@ -58,6 +51,7 @@
   self.minute = [NSNumber numberWithInt:[self.timePickerView selectedRowInComponent:1] % self.numberOfMinutes];
   self.alarm.hour = self.hour;
   self.alarm.minute = self.minute;
+  [super viewWillDisappear:animated];
 }
 
 - (void) resetTimePickerToMiddle:(NSUInteger)hour minutes:(NSUInteger)minutes

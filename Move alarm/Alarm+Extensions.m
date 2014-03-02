@@ -7,7 +7,10 @@
 
 #import "Alarm+Extensions.h"
 #import "Repetition+Extensions.h"
+#import "Location+Extensions.h"
 #import "MADebugMacros.h"
+#import <CoreLocation/CoreLocation.h>
+
 
 @implementation Alarm (Extensions)
 
@@ -19,8 +22,12 @@
 
 + (instancetype)insertNewObjectInManagedObjectContext:(NSManagedObjectContext *)moc
 {
-  return [NSEntityDescription insertNewObjectForEntityForName:[self entityName]
-                                       inManagedObjectContext:moc];
+  Alarm *alarm = [NSEntityDescription insertNewObjectForEntityForName:[self entityName]
+                                               inManagedObjectContext:moc];
+  alarm.hour = [NSNumber numberWithInt:6];
+  alarm.minute = [NSNumber numberWithInt:0];
+  
+  return alarm;
 }
 
 + (NSInteger) numberOfAlarmsWithManagedObjectContext:(NSManagedObjectContext *)moc
@@ -58,10 +65,17 @@
 # pragma mark - display instance methods
 - (NSString *) displayTime
 {
-  DLog(@"%@", [[[self.hour stringValue] stringByAppendingString:@":"] stringByAppendingString:[self.minute stringValue]]);
-  return [[[self.hour stringValue] stringByAppendingString:@":"] stringByAppendingString:[self.minute stringValue]];
+  if (self.minute.integerValue) {
+    DLog(@"%@", [[[self.hour stringValue] stringByAppendingString:@":"] stringByAppendingString:[self.minute stringValue]]);
+    return [[[self.hour stringValue] stringByAppendingString:@":"] stringByAppendingString:[self.minute stringValue]];
+  }
+  else {
+    DLog(@"%@", [[[self.hour stringValue] stringByAppendingString:@":"] stringByAppendingString:@"00"]);
+    return [[[self.hour stringValue] stringByAppendingString:@":"] stringByAppendingString:@"00"];
+  }
 }
 
+#pragma mark - Display Methods
 - (NSString *) displayRepitions
 {
   DLog("");
@@ -118,6 +132,11 @@
   }
   DLog(@"%@", displayString);
   return displayString;
+}
+
+- (void) displayAddress:(CLGeocodeCompletionHandler)completionHander
+{
+  [self.location address:completionHander];
 }
 
 - (NSArray *)repitionsSorted

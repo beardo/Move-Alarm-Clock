@@ -7,6 +7,8 @@
 
 #import "Alarm.h"
 
+typedef void (^CLGeocodeCompletionHandler)(NSArray *placemark, NSError *error);
+
 @interface Alarm (Extensions)
 + (NSString *)entityName;
 + (instancetype)insertNewObjectInManagedObjectContext:(NSManagedObjectContext *)moc;
@@ -14,5 +16,6 @@
 + (Alarm *) getFirstAlarmWithManagedObjectContext:(NSManagedObjectContext *)moc;
 - (NSString *) displayTime;
 - (NSString *) displayRepitions;
+- (void) displayAddress:(CLGeocodeCompletionHandler)completionHander;
 - (NSArray *)repitionsSorted;
 @end

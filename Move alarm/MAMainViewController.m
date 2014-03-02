@@ -8,10 +8,14 @@
 #import "MAMainViewController.h"
 #import "Alarm.h"
 #import "Alarm+Extensions.h"
+#import "Location+Extensions.h"
 #import "MARepeatViewController.h"
 #import "MAAlarmViewControllerProtocol.h"
 
 #import "MADebugMacros.h"
+
+#import <CoreLocation/CoreLocation.h>
+#import <AddressBookUI/AddressBookUI.h>
 
 @interface MAMainViewController ()
 @end
@@ -44,9 +48,18 @@
     {
       DLog(@"save failed: %@", error);
     }
+
   }
   [self.timeButton setTitle:[self.alarm displayTime] forState:UIControlStateNormal];
   [self.repeatButton setTitle:[self.alarm displayRepitions] forState:UIControlStateNormal];
+  [self.alarm displayAddress:^(NSArray *placemarks, NSError *error){
+    CLPlacemark *placemark = placemarks.lastObject;
+    if (placemark) {
+      
+      NSString *address = ABCreateStringWithAddressDictionary(placemark.addressDictionary, NO);
+      [self.locationButton setTitle:address forState:UIControlStateNormal];
+    }
+  }];
 }
 
 - (void)didReceiveMemoryWarning
