@@ -73,7 +73,8 @@
 {
   if (([[segue identifier] isEqualToString:@"ShowTimePickerSegue"]) ||
      ([[segue identifier] isEqualToString:@"ShowLocationPickerSegue"]) ||
-     ([[segue identifier] isEqualToString:@"ShowRepeaterSegue"]))
+     ([[segue identifier] isEqualToString:@"ShowRepeaterSegue"]) ||
+     ([[segue identifier] isEqualToString:@"ShowSoundTypePickerSegue"]))
   {
     UIViewController<MAAlarmViewControllerProtocol> *destinationViewController = segue.destinationViewController;
     destinationViewController.managedObjectContext = self.managedObjectContext;

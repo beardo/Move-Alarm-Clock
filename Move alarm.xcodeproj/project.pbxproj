@@ -33,6 +33,9 @@
 		25CBEEC31814AB4500C19636 /* MARepeatViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 25CBEEC21814AB4500C19636 /* MARepeatViewController.m */; };
 		25CBEEC61814AB7500C19636 /* MATimeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 25CBEEC51814AB7500C19636 /* MATimeViewController.m */; };
 		25CBEEC91814ABB600C19636 /* MALocationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 25CBEEC81814ABB600C19636 /* MALocationViewController.m */; };
+		25CE487418C411D900E0F407 /* MASoundTypeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 25CE487318C411D900E0F407 /* MASoundTypeViewController.m */; };
+		25CE487718C4156B00E0F407 /* MASoundPickerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 25CE487618C4156B00E0F407 /* MASoundPickerViewController.m */; };
+		25CE487918C417BF00E0F407 /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 25CE487818C417BF00E0F407 /* MediaPlayer.framework */; };
 		25E8EF83181B2A95007713F4 /* Repetition+Extensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 25E8EF82181B2A95007713F4 /* Repetition+Extensions.m */; };
 		25E8EF86181B2DCA007713F4 /* Alarm.m in Sources */ = {isa = PBXBuildFile; fileRef = 25E8EF85181B2DCA007713F4 /* Alarm.m */; };
 		25E8EF8C181B2FCE007713F4 /* Repetition.m in Sources */ = {isa = PBXBuildFile; fileRef = 25E8EF8B181B2FCE007713F4 /* Repetition.m */; };
@@ -87,6 +90,11 @@
 		25CBEEC51814AB7500C19636 /* MATimeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MATimeViewController.m; sourceTree = "<group>"; };
 		25CBEEC71814ABB600C19636 /* MALocationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MALocationViewController.h; sourceTree = "<group>"; };
 		25CBEEC81814ABB600C19636 /* MALocationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MALocationViewController.m; sourceTree = "<group>"; };
+		25CE487218C411D900E0F407 /* MASoundTypeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MASoundTypeViewController.h; sourceTree = "<group>"; };
+		25CE487318C411D900E0F407 /* MASoundTypeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MASoundTypeViewController.m; sourceTree = "<group>"; };
+		25CE487518C4156B00E0F407 /* MASoundPickerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MASoundPickerViewController.h; sourceTree = "<group>"; };
+		25CE487618C4156B00E0F407 /* MASoundPickerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MASoundPickerViewController.m; sourceTree = "<group>"; };
+		25CE487818C417BF00E0F407 /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = System/Library/Frameworks/MediaPlayer.framework; sourceTree = SDKROOT; };
 		25E8EF81181B2A95007713F4 /* Repetition+Extensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Repetition+Extensions.h"; sourceTree = "<group>"; };
 		25E8EF82181B2A95007713F4 /* Repetition+Extensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Repetition+Extensions.m"; sourceTree = "<group>"; };
 		25E8EF84181B2DCA007713F4 /* Alarm.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Alarm.h; sourceTree = "<group>"; };
@@ -104,6 +112,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				25CE487918C417BF00E0F407 /* MediaPlayer.framework in Frameworks */,
 				2597D99E18C2C21500C6898F /* AddressBook.framework in Frameworks */,
 				2597D99F18C2C21500C6898F /* AddressBookUI.framework in Frameworks */,
 				251AAE15180B7EEE0019AC63 /* MapKit.framework in Frameworks */,
@@ -149,6 +158,7 @@
 		25017095180A10370027ED08 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				25CE487818C417BF00E0F407 /* MediaPlayer.framework */,
 				2597D99C18C2C21500C6898F /* AddressBook.framework */,
 				2597D99D18C2C21500C6898F /* AddressBookUI.framework */,
 				251AAE14180B7EEE0019AC63 /* MapKit.framework */,
@@ -240,6 +250,10 @@
 				250170AB180A10390027ED08 /* MAMainViewController.h */,
 				250170AC180A10390027ED08 /* MAMainViewController.m */,
 				25E8EF8E181C80EE007713F4 /* MAAlarmViewControllerProtocol.h */,
+				25CE487218C411D900E0F407 /* MASoundTypeViewController.h */,
+				25CE487318C411D900E0F407 /* MASoundTypeViewController.m */,
+				25CE487518C4156B00E0F407 /* MASoundPickerViewController.h */,
+				25CE487618C4156B00E0F407 /* MASoundPickerViewController.m */,
 			);
 			name = "View Controllers";
 			sourceTree = "<group>";
@@ -362,7 +376,9 @@
 				250170A7180A10380027ED08 /* MAAppDelegate.m in Sources */,
 				25E8EF83181B2A95007713F4 /* Repetition+Extensions.m in Sources */,
 				250170AD180A10390027ED08 /* MAMainViewController.m in Sources */,
+				25CE487718C4156B00E0F407 /* MASoundPickerViewController.m in Sources */,
 				250170A3180A10370027ED08 /* main.m in Sources */,
+				25CE487418C411D900E0F407 /* MASoundTypeViewController.m in Sources */,
 				25CBEEC01814A1A000C19636 /* Model.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
