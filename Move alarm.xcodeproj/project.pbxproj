@@ -22,7 +22,7 @@
 		250170C0180A10390027ED08 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 250170BE180A10390027ED08 /* InfoPlist.strings */; };
 		250170C2180A10390027ED08 /* Move_alarmTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 250170C1180A10390027ED08 /* Move_alarmTests.m */; };
 		250170CC180A122A0027ED08 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 250170CB180A122A0027ED08 /* CoreLocation.framework */; };
-		250170CE180A25950027ED08 /* alarm_sound.wav in Resources */ = {isa = PBXBuildFile; fileRef = 250170CD180A25950027ED08 /* alarm_sound.wav */; };
+		250170CE180A25950027ED08 /* alarm sound.wav in Resources */ = {isa = PBXBuildFile; fileRef = 250170CD180A25950027ED08 /* alarm sound.wav */; };
 		251AAE15180B7EEE0019AC63 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 251AAE14180B7EEE0019AC63 /* MapKit.framework */; };
 		2597D99818C17AA500C6898F /* Location+Extensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 2597D99718C17AA500C6898F /* Location+Extensions.m */; };
 		2597D99E18C2C21500C6898F /* AddressBook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2597D99C18C2C21500C6898F /* AddressBook.framework */; };
@@ -73,7 +73,7 @@
 		250170BF180A10390027ED08 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		250170C1180A10390027ED08 /* Move_alarmTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Move_alarmTests.m; sourceTree = "<group>"; };
 		250170CB180A122A0027ED08 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
-		250170CD180A25950027ED08 /* alarm_sound.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = alarm_sound.wav; sourceTree = "<group>"; };
+		250170CD180A25950027ED08 /* alarm sound.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "alarm sound.wav"; sourceTree = "<group>"; };
 		251AAE14180B7EEE0019AC63 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		2597D99618C17AA500C6898F /* Location+Extensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Location+Extensions.h"; sourceTree = "<group>"; };
 		2597D99718C17AA500C6898F /* Location+Extensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Location+Extensions.m"; sourceTree = "<group>"; };
@@ -189,7 +189,7 @@
 		2501709D180A10370027ED08 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				250170CD180A25950027ED08 /* alarm_sound.wav */,
+				250170CD180A25950027ED08 /* alarm sound.wav */,
 				2501709E180A10370027ED08 /* Move alarm-Info.plist */,
 				2501709F180A10370027ED08 /* InfoPlist.strings */,
 				250170A2180A10370027ED08 /* main.m */,
@@ -342,7 +342,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				250170CE180A25950027ED08 /* alarm_sound.wav in Resources */,
+				250170CE180A25950027ED08 /* alarm sound.wav in Resources */,
 				250170AF180A10390027ED08 /* Images.xcassets in Resources */,
 				250170A1180A10370027ED08 /* InfoPlist.strings in Resources */,
 				250170AA180A10390027ED08 /* Main.storyboard in Resources */,

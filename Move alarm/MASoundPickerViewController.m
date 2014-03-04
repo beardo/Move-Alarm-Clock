@@ -8,8 +8,10 @@
 
 #import "MASoundPickerViewController.h"
 
-@interface MASoundPickerViewController ()
+#import "MADebugMacros.h"
 
+@interface MASoundPickerViewController ()
+@property NSArray *soundFiles;
 @end
 
 @implementation MASoundPickerViewController
@@ -25,13 +27,19 @@
 
 - (void)viewDidLoad
 {
-    [super viewDidLoad];
-
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
- 
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+  [super viewDidLoad];
+  
+  NSArray *filesPaths = [[NSBundle mainBundle] pathsForResourcesOfType:@"wav" inDirectory:@"." ];
+  
+  NSMutableArray *fileNames = [[NSMutableArray alloc] init];
+  
+  for (NSString *filePath in filesPaths) {
+    NSString *fileName = [[filePath lastPathComponent] stringByDeletingPathExtension];
+    [fileNames addObject:fileName];
+  }
+  
+  NSArray *soundFiles = [NSArray arrayWithArray:fileNames];
+  self.soundFiles = soundFiles;
 }
 
 - (void)didReceiveMemoryWarning
@@ -45,23 +53,23 @@
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
     // Return the number of sections.
-    return 0;
+    return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     // Return the number of rows in the section.
-    return 0;
+    return self.soundFiles.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    static NSString *CellIdentifier = @"Cell";
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
-    
-    // Configure the cell...
-    
-    return cell;
+  static NSString *CellIdentifier = @"SoundFileCell";
+  UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
+  
+  cell.textLabel.text = [self.soundFiles objectAtIndex:indexPath.row];
+  
+  return cell;
 }
 
 

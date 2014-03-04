@@ -59,7 +59,7 @@
 - (void) tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
   DLog(@"indexPath = %@", indexPath);
-  DLog(@"indexPath.row = %d", indexPath.row);
+  DLog(@"indexPath.row = %ld", (long)indexPath.row);
   if (indexPath.row == 1) {
     MPMediaPickerController *picker =
     [[MPMediaPickerController alloc]
@@ -92,7 +92,8 @@
    didPickMediaItems: (MPMediaItemCollection *) collection {
   
   DLog(@"picked song");
-  DLog(@"collection: %d", collection.count);
+  DLog(@"collection: %lu", (unsigned long)collection.count);
+  DLog(@"collection.items.firstobject.class = %@", [collection.items.firstObject class]);
 //  [self dismissModalViewControllerAnimated: YES];
 
 //  [self updatePlayerQueueWithMediaCollection: collection];
