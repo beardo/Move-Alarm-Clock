@@ -2,7 +2,8 @@
 //  Alarm.m
 //  Move alarm
 //
-//  Created by Daniel Sullivan on 10/25/13.
+//  Created by Daniel Sullivan on 3/4/14.
+//  Copyright (c) 2014 Novelty Software. All rights reserved.
 //
 
 #import "Alarm.h"
@@ -16,6 +17,7 @@
 @dynamic minute;
 @dynamic on;
 @dynamic sound;
+@dynamic inMusicLibrary;
 @dynamic location;
 @dynamic repetitions;
 

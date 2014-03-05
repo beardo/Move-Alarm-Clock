@@ -8,6 +8,7 @@
 
 #import "MASoundPickerViewController.h"
 
+#import "Alarm+Extensions.h"
 #import "MADebugMacros.h"
 
 @interface MASoundPickerViewController ()
@@ -70,6 +71,12 @@
   cell.textLabel.text = [self.soundFiles objectAtIndex:indexPath.row];
   
   return cell;
+}
+
+- (void)tableView:(UITableView *)tableView didDeselectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+  self.alarm.sound = self.soundFiles[indexPath.row];
+  self.alarm.inMusicLibrary = [NSNumber numberWithBool:NO];
 }
 
 

@@ -9,6 +9,7 @@
 #import "MASoundTypeViewController.h"
 
 #import "MADebugMacros.h"
+#import "Alarm+Extensions.h"
 
 @interface MASoundTypeViewController ()
 
@@ -71,9 +72,7 @@
     NSLocalizedString (@"Add songs to play",
                        "Prompt in media item picker");
     
-    DLog(@"");
     [self presentViewController:picker animated:YES completion:nil];
-    DLog(@"");
   }
 }
 
@@ -90,13 +89,10 @@
 #pragma mark - MPMediaPickerControllerDelegate methods
 - (void) mediaPicker: (MPMediaPickerController *) mediaPicker
    didPickMediaItems: (MPMediaItemCollection *) collection {
-  
-  DLog(@"picked song");
-  DLog(@"collection: %lu", (unsigned long)collection.count);
-  DLog(@"collection.items.firstobject.class = %@", [collection.items.firstObject class]);
-//  [self dismissModalViewControllerAnimated: YES];
 
-//  [self updatePlayerQueueWithMediaCollection: collection];
+  MPMediaItem *item = collection.items.firstObject;
+  self.alarm.sound = [item valueForProperty:MPMediaItemPropertyTitle];
+  self.alarm.inMusicLibrary = [NSNumber numberWithBool:YES];
 }
 
 - (void) mediaPickerDidCancel: (MPMediaPickerController *) mediaPicker {

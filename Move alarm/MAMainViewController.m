@@ -52,6 +52,7 @@
   }
   [self.timeButton setTitle:[self.alarm displayTime] forState:UIControlStateNormal];
   [self.repeatButton setTitle:[self.alarm displayRepitions] forState:UIControlStateNormal];
+  [self.soundButton setTitle:[self.alarm displaySound] forState:UIControlStateNormal];
   [self.alarm displayAddress:^(NSArray *placemarks, NSError *error){
     CLPlacemark *placemark = placemarks.lastObject;
     if (placemark) {
@@ -72,9 +73,9 @@
 - (void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
   if (([[segue identifier] isEqualToString:@"ShowTimePickerSegue"]) ||
-     ([[segue identifier] isEqualToString:@"ShowLocationPickerSegue"]) ||
-     ([[segue identifier] isEqualToString:@"ShowRepeaterSegue"]) ||
-     ([[segue identifier] isEqualToString:@"ShowSoundTypePickerSegue"]))
+      ([[segue identifier] isEqualToString:@"ShowLocationPickerSegue"]) ||
+      ([[segue identifier] isEqualToString:@"ShowRepeaterSegue"]) ||
+      ([[segue identifier] isEqualToString:@"ShowSoundTypePickerSegue"]))
   {
     UIViewController<MAAlarmViewControllerProtocol> *destinationViewController = segue.destinationViewController;
     destinationViewController.managedObjectContext = self.managedObjectContext;

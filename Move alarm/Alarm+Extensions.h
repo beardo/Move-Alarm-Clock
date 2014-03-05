@@ -16,6 +16,7 @@ typedef void (^CLGeocodeCompletionHandler)(NSArray *placemark, NSError *error);
 + (Alarm *) getFirstAlarmWithManagedObjectContext:(NSManagedObjectContext *)moc;
 - (NSString *) displayTime;
 - (NSString *) displayRepitions;
+- (NSString *) displaySound;
 - (void) displayAddress:(CLGeocodeCompletionHandler)completionHander;
 - (NSArray *)repitionsSorted;
 @end

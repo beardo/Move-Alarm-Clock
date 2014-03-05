@@ -62,7 +62,7 @@
   return alarm;
 }
 
-# pragma mark - display instance methods
+#pragma mark - Display Methods
 - (NSString *) displayTime
 {
   if (self.minute.integerValue) {
@@ -75,7 +75,6 @@
   }
 }
 
-#pragma mark - Display Methods
 - (NSString *) displayRepitions
 {
   DLog("");
@@ -137,6 +136,19 @@
 - (void) displayAddress:(CLGeocodeCompletionHandler)completionHander
 {
   [self.location address:completionHander];
+}
+
+- (NSString *) displaySound
+{
+  DLog(@"self.sound = %@", self.sound);
+  if (self.sound)
+  {
+    return self.sound;
+  }
+  else
+  {
+    return @"Alarm";
+  }
 }
 
 - (NSArray *)repitionsSorted

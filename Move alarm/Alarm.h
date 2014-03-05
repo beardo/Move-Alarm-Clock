@@ -2,7 +2,8 @@
 //  Alarm.h
 //  Move alarm
 //
-//  Created by Daniel Sullivan on 10/25/13.
+//  Created by Daniel Sullivan on 3/4/14.
+//  Copyright (c) 2014 Novelty Software. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>
@@ -16,6 +17,7 @@
 @property (nonatomic, retain) NSNumber * minute;
 @property (nonatomic, retain) NSNumber * on;
 @property (nonatomic, retain) NSString * sound;
+@property (nonatomic, retain) NSNumber * inMusicLibrary;
 @property (nonatomic, retain) Location *location;
 @property (nonatomic, retain) NSSet *repetitions;
 @end
