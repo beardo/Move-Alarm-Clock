@@ -50,6 +50,11 @@
     }
 
   }
+  
+//  self.activationButton.enabled = [self.alarm.on boolValue];
+  
+  [self.activationButton setSelectedSegmentIndex:![self.alarm.on boolValue]];
+  
   [self.timeButton setTitle:[self.alarm displayTime] forState:UIControlStateNormal];
   [self.repeatButton setTitle:[self.alarm displayRepitions] forState:UIControlStateNormal];
   [self.soundButton setTitle:[self.alarm displaySound] forState:UIControlStateNormal];
@@ -85,6 +90,12 @@
 
 #pragma mark - action
 - (IBAction)changedActivation:(id)sender {
-  
+  DLog(@"changing activation");
+  self.alarm.on = [NSNumber numberWithBool:![self.alarm.on boolValue]];
+  NSError *error;
+  if(![self.managedObjectContext save:&error])
+  {
+    DLog(@"save failed: %@", error);
+  }
 }
 @end
