@@ -61,7 +61,6 @@
 {
   Repetition *nextRepetition = nil;
   NSDate *today = [NSDate date];
-  DLog(@"today = %@", today);
   NSCalendar *gregorianCalendar = [[NSCalendar alloc] initWithCalendarIdentifier:NSGregorianCalendar];
   gregorianCalendar.locale = [NSLocale currentLocale];
   

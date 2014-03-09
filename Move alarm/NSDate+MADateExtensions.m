@@ -21,18 +21,13 @@
                                     NSMinuteCalendarUnit | NSSecondCalendarUnit fromDate:today];
   
   
-  DLog(@"components.weekday = %d", components.weekday);
-  DLog(@"dayOfTheWeek = %d", dayOfTheWeek);
   if (components.weekday > dayOfTheWeek) {
     DLog(@"next week");
     components.week = components.week + 1;
   }
   components.weekday = dayOfTheWeek;
-
   components.hour = hour;
-  DLog(@"components.hour = %d", components.hour);
   components.minute = minutes;
-  DLog(@"components.minutes = %d", components.minute);
   components.second = 0;
 
   return [gregorianCalendar dateFromComponents:components];

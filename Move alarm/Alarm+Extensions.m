@@ -177,8 +177,8 @@
   UILocalNotification *nextNotification = [[UILocalNotification alloc] init];
   nextNotification.fireDate = notificationDate;
   nextNotification.soundName = self.sound;
-  DLog(@"created notification at %@ with sound %@", notificationDate, self.sound);
-  DLog(@"self.hour = %@, self.minutes = %@", self.hour, self.minute);
+//  DLog(@"created notification at %@ with sound %@", notificationDate, self.sound);
+//  DLog(@"self.hour = %@, self.minutes = %@", self.hour, self.minute);
 }
 
 @end
