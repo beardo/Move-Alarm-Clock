@@ -77,6 +77,7 @@
 {
   self.alarm.sound = self.soundFiles[indexPath.row];
   self.alarm.inMusicLibrary = [NSNumber numberWithBool:NO];
+  DLog(@"self.alarm = %@", self.alarm);
 }
 
 

@@ -18,5 +18,6 @@ typedef void (^CLGeocodeCompletionHandler)(NSArray *placemark, NSError *error);
 - (NSString *) displayRepitions;
 - (NSString *) displaySound;
 - (void) displayAddress:(CLGeocodeCompletionHandler)completionHander;
-- (NSArray *)repitionsSorted;
+- (NSArray *)repetitionsSorted;
+- (void) createAlarmNotification;
 @end

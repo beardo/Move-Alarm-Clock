@@ -5,6 +5,8 @@
 //  Created by Daniel Sullivan on 10/25/13.
 //
 
+#import "NSDate+MADateExtensions.h"
+#import "MADebugMacros.h"
 #import "Repetition+Extensions.h"
 
 @implementation Repetition (Extensions)
@@ -55,10 +57,43 @@
            repitionWednesday, repitionThursday, repitionFriday, repitionSaturday];
 }
 
++ (Repetition *) closestRepetitionFromToday:(NSArray *)repetitions
+{
+  Repetition *nextRepetition = nil;
+  NSDate *today = [NSDate date];
+  DLog(@"today = %@", today);
+  NSCalendar *gregorianCalendar = [[NSCalendar alloc] initWithCalendarIdentifier:NSGregorianCalendar];
+  gregorianCalendar.locale = [NSLocale currentLocale];
+  
+  NSDateComponents *components = [gregorianCalendar components:NSYearCalendarUnit |
+                                  NSWeekCalendarUnit | NSHourCalendarUnit | NSWeekdayCalendarUnit |
+                                  NSMinuteCalendarUnit | NSSecondCalendarUnit fromDate:today];
+  
+  MADayOfTheWeek dayOfTheWeek = components.weekday;
+  
+  for (Repetition *repetition in repetitions) {
+    MADayOfTheWeek repetitionDay = [NSDate dayEnumFromString:repetition.day];
+    if ([repetition.shouldRepeat boolValue] && dayOfTheWeek == repetitionDay) {
+      nextRepetition = repetition;
+      break;
+    }
+    else
+    {
+      continue;
+    }
+  }
+  return nextRepetition;
+}
+
 #pragma mark - Instance Methods
 - (NSString *)displayName
 {
   return [@"Every " stringByAppendingString:self.day];
+}
+
+- (MADayOfTheWeek)dayEnum
+{
+  return [NSDate dayEnumFromString:self.day];
 }
 
 @end

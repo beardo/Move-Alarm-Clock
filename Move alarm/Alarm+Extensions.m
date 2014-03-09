@@ -8,6 +8,7 @@
 #import "Alarm+Extensions.h"
 #import "Repetition+Extensions.h"
 #import "Location+Extensions.h"
+#import "NSDate+MADateExtensions.h"
 #import "MADebugMacros.h"
 #import <CoreLocation/CoreLocation.h>
 
@@ -65,21 +66,28 @@
 #pragma mark - Display Methods
 - (NSString *) displayTime
 {
-  if (self.minute.integerValue) {
-    DLog(@"%@", [[[self.hour stringValue] stringByAppendingString:@":"] stringByAppendingString:[self.minute stringValue]]);
-    return [[[self.hour stringValue] stringByAppendingString:@":"] stringByAppendingString:[self.minute stringValue]];
+  NSString *timeString = [[self.hour stringValue] stringByAppendingString:@":"];
+  if ([self.minute intValue] < 10) {
+    timeString = [[timeString stringByAppendingString:@"0"] stringByAppendingString:[self.minute stringValue]];
   }
-  else {
-    DLog(@"%@", [[[self.hour stringValue] stringByAppendingString:@":"] stringByAppendingString:@"00"]);
-    return [[[self.hour stringValue] stringByAppendingString:@":"] stringByAppendingString:@"00"];
+  else
+  {
+    timeString = [timeString stringByAppendingString:[self.minute stringValue]];
   }
+  
+  DLog(@"%@", timeString);
+  return timeString;
+//  else {
+//    DLog(@"%@", [[[self.hour stringValue] stringByAppendingString:@":"] stringByAppendingString:@"00"]);
+//    return [[[self.hour stringValue] stringByAppendingString:@":"] stringByAppendingString:@"00"];
+//  }
 }
 
 - (NSString *) displayRepitions
 {
   DLog("");
   NSString *displayString = @"";
-  NSArray *repetitions = self.repitionsSorted;
+  NSArray *repetitions = self.repetitionsSorted;
   for (Repetition *repetition in repetitions) {
     if ([repetition.shouldRepeat boolValue]) {
       if ([repetition.day isEqualToString:@"Sunday"]) {
@@ -151,12 +159,26 @@
   }
 }
 
-- (NSArray *)repitionsSorted
+- (NSArray *)repetitionsSorted
 {
   NSSortDescriptor *repetitionDescriptor = [NSSortDescriptor sortDescriptorWithKey:@"sortValue"
                                                                          ascending:YES];
   NSArray *sortDescriptors = @[repetitionDescriptor];
   return [self.repetitions sortedArrayUsingDescriptors:sortDescriptors];
+}
+
+- (void) createAlarmNotification
+{
+  Repetition *nextAlarmRepetition = [Repetition closestRepetitionFromToday:[self repetitionsSorted]];
+  
+  NSDate *notificationDate = [NSDate dateFromNext:[nextAlarmRepetition dayEnum]
+                                       atHour:[self.hour intValue] atMinutes:[self.minute intValue]];
+  
+  UILocalNotification *nextNotification = [[UILocalNotification alloc] init];
+  nextNotification.fireDate = notificationDate;
+  nextNotification.soundName = self.sound;
+  DLog(@"created notification at %@ with sound %@", notificationDate, self.sound);
+  DLog(@"self.hour = %@, self.minutes = %@", self.hour, self.minute);
 }
 
 @end

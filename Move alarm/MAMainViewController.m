@@ -66,6 +66,11 @@
       [self.locationButton setTitle:address forState:UIControlStateNormal];
     }
   }];
+  
+  if (self.alarm.on) {
+    [self.alarm createAlarmNotification];
+  }
+
 }
 
 - (void)didReceiveMemoryWarning
@@ -73,7 +78,6 @@
   [super didReceiveMemoryWarning];
   // Dispose of any resources that can be recreated.
 }
-
 
 - (void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {

@@ -29,7 +29,7 @@
 - (void)viewDidLoad
 {
   [super viewDidLoad];
-  self.repetitions = self.alarm.repitionsSorted;
+  self.repetitions = self.alarm.repetitionsSorted;
   if (![self.repetitions count])
   {
     self.repetitions = [Repetition createRepitionsForDaysWithManagedObjectContext:self.managedObjectContext];
