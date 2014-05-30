@@ -47,8 +47,8 @@
 
 - (void)viewWillDisappear:(BOOL)animated
 {
-  self.hour = [NSNumber numberWithInt:[self.timePickerView selectedRowInComponent:0] % self.numberOfHours];
-  self.minute = [NSNumber numberWithInt:[self.timePickerView selectedRowInComponent:1] % self.numberOfMinutes];
+  self.hour = [NSNumber numberWithUnsignedLong:[self.timePickerView selectedRowInComponent:0] % self.numberOfHours];
+  self.minute = [NSNumber numberWithUnsignedLong:[self.timePickerView selectedRowInComponent:1] % self.numberOfMinutes];
   self.alarm.hour = self.hour;
   self.alarm.minute = self.minute;
   [super viewWillDisappear:animated];
