@@ -170,15 +170,23 @@
 - (void) createAlarmNotification
 {
   Repetition *nextAlarmRepetition = [Repetition closestRepetitionFromToday:[self repetitionsSorted]];
-  
+
+  // FIXME: now that we know about repeatInterval and repeatCalendar need to redo this.
   NSDate *notificationDate = [NSDate dateFromNext:[nextAlarmRepetition dayEnum]
                                        atHour:[self.hour intValue] atMinutes:[self.minute intValue]];
+
   
   UILocalNotification *nextNotification = [[UILocalNotification alloc] init];
   nextNotification.fireDate = notificationDate;
+  nextNotification.timeZone = [NSTimeZone localTimeZone];
   nextNotification.soundName = self.sound;
-//  DLog(@"created notification at %@ with sound %@", notificationDate, self.sound);
-//  DLog(@"self.hour = %@, self.minutes = %@", self.hour, self.minute);
+  nextNotification.repeatInterval = NSWeekCalendarUnit;
+  nextNotification.alertBody = NSLocalizedString(@"Time to wake up.", @"The alarm alert body");
+  nextNotification.alertAction = NSLocalizedString(@"Wake up", @"The alarm alert action");
+  UIApplication *app = [UIApplication sharedApplication];
+  [app scheduleLocalNotification:nextNotification];
+  DLog(@"created notification at %@ with sound %@", notificationDate, self.sound);
+  DLog(@"self.hour = %@, self.minutes = %@", self.hour, self.minute);
 }
 
 @end

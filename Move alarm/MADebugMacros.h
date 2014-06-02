@@ -3,7 +3,6 @@
 //  Move alarm
 //
 //  Created by Daniel Sullivan on 10/26/13.
-//  Copyright (c) 2013 Novelty Software. All rights reserved.
 //
 
 #ifndef Move_alarm_MADebugMacros_h
